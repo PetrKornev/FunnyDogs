@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Get from './Get';
 
 const Dinamic = () => {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ const Dinamic = () => {
           ></input>
           <button onClick={increment}>Обновить</button>
         </p>
+        <Get count={inputValue} />
       </h2>
     </>
   );

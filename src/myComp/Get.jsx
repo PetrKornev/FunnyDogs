@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 
-const Get = () => {
+const Get = ({ count }) => {
   const [picture, setPicture] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [update, setUpdate] = useState();
   const getDog = async () => {
     try {
-      const response = await fetch(`https://dog.ceo/api/breeds/image/random/3`);
+      const response = await fetch(
+        `https://dog.ceo/api/breeds/image/random/${count}`
+      );
       const data = await response.json();
 
       setPicture(data.message);
@@ -20,8 +21,6 @@ const Get = () => {
   useEffect(() => {
     getDog();
   }, []);
-
-  useEffect(() => {}, [update]);
 
   if (loading) return <>Загрузка...</>;
   return (
