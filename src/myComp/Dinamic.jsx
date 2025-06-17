@@ -28,7 +28,7 @@ const Dinamic = () => {
           ></input>
           <button onClick={increment}>Обновить</button>
         </p>
-        <Get count={inputValue} />
+        <Get count={inputValue} update={count} />
       </h2>
     </>
   );

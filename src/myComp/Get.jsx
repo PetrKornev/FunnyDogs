@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Get = ({ count }) => {
+const Get = ({ count, update }) => {
   const [picture, setPicture] = useState([]);
   const [loading, setLoading] = useState(true);
   const getDog = async () => {
@@ -21,6 +21,10 @@ const Get = ({ count }) => {
   useEffect(() => {
     getDog();
   }, []);
+
+  useEffect(() => {
+    getDog();
+  }, [update]);
 
   if (loading) return <>Загрузка...</>;
   return (
